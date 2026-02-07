@@ -271,7 +271,7 @@ const FamilyForgeCard = () => (
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState('home');
   const [isVisible, setIsVisible] = useState(false);
-  const profileImageUrl = "Notepad.png";
+  const profileImageUrl = "San.JPG";
 
   useEffect(() => {
     setIsVisible(true);
