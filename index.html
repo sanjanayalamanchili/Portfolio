@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sketchbook - Lo-Fi Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --wall-bg: #fdfdfb;
+        --ink-color: #2a2a2a;
+        --dot-color: #d1d1d1;
+        --pencil-shadow: #c0c0c0;
+      }
+      body {
+        font-family: 'Architects Daughter', cursive;
+        background-color: var(--wall-bg);
+        color: var(--ink-color);
+        margin: 0;
+        overflow-x: hidden;
+      }
+      .font-hand { font-family: 'Caveat', cursive; }
+
+      /* Sketchy Paper with Pencil Dots */
+      .studio-bg {
+        background-color: var(--wall-bg);
+        background-image: 
+          radial-gradient(var(--dot-color) 1.2px, transparent 1.2px);
+        background-size: 30px 30px;
+        position: relative;
+      }
+      .studio-bg::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+        opacity: 0.4;
+        pointer-events: none;
+        z-index: 10;
+      }
+
+      /* The Sketchy Border Trick */
+      .sketch-box {
+        border: 2px solid var(--ink-color);
+        border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        box-shadow: 4px 4px 0px var(--pencil-shadow);
+        transition: all 0.3s ease;
+        background: white;
+      }
+      .sketch-box:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 8px 8px 0px var(--pencil-shadow);
+      }
+
+      .sketch-circle {
+        border: 2px solid var(--ink-color);
+        border-radius: 48% 52% 56% 44% / 45% 55% 45% 55%;
+      }
+
+      /* Custom scrollbar - looks like a pencil mark */
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 8px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: var(--ink-color);
+        border-radius: 10px;
+        border: 2px solid var(--wall-bg);
+      }
+    </style>
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0"
+  }
+}
+</script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
